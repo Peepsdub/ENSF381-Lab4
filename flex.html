@@ -1,9 +1,9 @@
 <!--
 =========================================================
-Name        : index.html
+Name        : flex.html
 Assignment  : Lab 4 Exercise C
-Author(s)   : Mahdi Ansari, William Arthur Philip Louis
-Submission  : May 21, 2030
+Author(s)   : Muhammad Ahmed, Petr Dubovsky
+Submission  : Wed Feb 7, 2024
 Description : Flex Layouts.
 =========================================================
 -->
@@ -19,21 +19,7 @@ Description : Flex Layouts.
 
 	<style>	
 		/* Remove borders at the end, they have been add just for detecting positions of items*/	
-		div {
-			border: 1px dashed gray;	
-		}
-		.row{ 
-			border: 1px solid red;			
-		}
-		.large {
-			border: 1px solid blue;	
-		}
-		.medium {
-			border: 1px solid green;	
-		}
-		.small {
-			border: 1px solid yellow;	
-		}		
+		
 	</style>
 
 	<style>
@@ -54,6 +40,7 @@ Description : Flex Layouts.
             text-decoration: none;
             color: #315eff;
         }
+		
 	</style>
 
 	<style>
@@ -67,53 +54,101 @@ Description : Flex Layouts.
 		}
         body { margin: 0; padding: 0; }
         img { max-width: 100%; height: auto; }
-        .container { 
-			/*I need some CSS codes.*/
-		 }
-        .header, .footer { background-color: #f2f2f2; text-align: center; padding: 10px; width: 100%;}
-		.body { 
-			/*I need some CSS codes.*/
-		}
-        .main { 
-			padding: 15px; 
-			/*I need some CSS codes.*/
-		}
-        
-        .news-item { padding: 10px; }
-        .row { 
-			/*I need some CSS codes.*/
-		}
-        
+    .container { 
+		/*I need some CSS codes.*/
+		display: flex; 
+		flex-direction: column; 
+	}
 
-        @media screen and (min-width: 769px) {
-            .menu { width: 150px; }     
-			.large { 
-				/*I need some CSS codes.*/
-			}
-			.medium { 
-				/*I need some CSS codes.*/
-			}
-			.small { 
-				/*I need some CSS codes.*/
-			 }       
-        }
+	.header, .footer { background-color: #f2f2f2; text-align: center; padding: 10px; width: 100%;}
 
-        @media screen and (max-width: 768px) {
-			.body { 
-				/*I need some CSS codes.*/
-			}
-            .menu ul { 
-				/*I need some CSS codes.*/
-			 }            
-            /*I need some CSS codes.*/
-        }
+	.body {
+		/*I need some CSS codes.*/
+		display: flex; 
+		flex-direction: column; 
+	}
 
-        @media screen and (max-width: 480px) {
-            .news-item header h1 { font-size: 18px; }
-            .medium, .small { 
-				/*I need some CSS codes.*/
-			 }
-        }
+	.main { 
+		display: flex; 
+		flex-direction: column; 
+	}
+	.news-item{padding:10px;}
+	.row { 
+		/*I need some CSS codes.*/
+		display: flex; 
+		flex-wrap: wrap; 
+		 
+	}
+
+	@media screen and (min-width: 769px) {
+
+		.body {
+		/*I need some CSS codes.*/
+			display: flex; 
+			flex-direction: row; 
+		}
+		.menu{
+			flex: 0 0 15%;
+		}
+		.main{
+			flex: 0 0 85%;
+		}
+		.large {
+			/*I need some CSS codes.*/ 
+			flex: 0 0 100%; 
+		}
+		.medium { 
+			/*I need some CSS codes.*/
+			flex: 0 0 70%; 
+		}
+		.small { 
+			/*I need some CSS codes.*/
+			flex: 0 0 30%; 
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.body{
+			/*I need some CSS codes.*/
+			flex-direction: column;
+		}
+		.menu ul { 
+			/*I need some CSS codes.*/
+			flex-direction: row; 
+			justify-content: center; 
+			padding: 0; 
+		}
+		/*I need some CSS codes.*/
+		
+		.large { 
+			flex: 0 0 100%;
+		}
+		.medium { 
+			flex: 0 0 60%; 
+		}
+		.small { 
+			flex: 0 0 40%;
+		}
+		
+	}
+
+	@media screen and (max-width: 480px) {
+		.news-item header h1 { font-size: 18px; }
+		.medium,.small{
+			/*I need some CSS codes.*/
+			flex-direction: column; 
+			flex: 0 0 100%;
+		}
+		.menu ul { 
+			/*I need some CSS codes.*/
+			flex-direction: row; 
+			justify-content: center; 
+			padding: 0; 
+		}
+		
+		
+	}
+
     </style>
 </head>
 <body>
@@ -170,7 +205,7 @@ Description : Flex Layouts.
 					<!-- Medium news item -->
 					<div class="medium news-item">
 						<header>
-							<h1>Your Name Takes a Historic Spacewalk Near the ISS</h1>
+							<h1>Petr Dubovsky Takes a Historic Spacewalk Near the ISS</h1>
 						</header>
 						<img src="images/medium.jpg" alt="Medium Image">
 						<article>
